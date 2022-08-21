@@ -1,3 +1,10 @@
+/*
+  Author: Lau
+  Date: August 22
+  Commands: 
+            - !global <message>: Send a global message (requires moderator permission);
+  
+*/
 import Plugin from "../Plugin";
 import { hasProps, isNumber, isString, isLength } from "../../utils/validation";
 
@@ -84,7 +91,7 @@ export default class GlobalMessage extends Plugin {
     return false;
   }
 
-
+  
   globalMessage(args, user) {
     if (args.length > 0 && user.isModerator) {
       let message = args.join(" ");
