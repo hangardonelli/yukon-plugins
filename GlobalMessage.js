@@ -7,8 +7,6 @@ export default class GlobalMessage extends Plugin {
 
     this.events = {
       send_message: this.sendMessage,
-      send_safe: this.sendSafe,
-      send_emote: this.sendEmote,
     };
 
     this.commands = {
@@ -62,41 +60,7 @@ export default class GlobalMessage extends Plugin {
     );
   }
 
-  sendSafe(args, user) {
-    if (!hasProps(args, "safe")) {
-      return;
-    }
-
-    if (!isNumber(args.safe)) {
-      return;
-    }
-
-    user.room.send(
-      user,
-      "send_safe",
-      { id: user.data.id, safe: args.safe },
-      [user],
-      true
-    );
-  }
-
-  sendEmote(args, user) {
-    if (!hasProps(args, "emote")) {
-      return;
-    }
-
-    if (!isNumber(args.emote)) {
-      return;
-    }
-
-    user.room.send(
-      user,
-      "send_emote",
-      { id: user.data.id, emote: args.emote },
-      [user],
-      true
-    );
-  }
+ 
 
   // Commands
 
