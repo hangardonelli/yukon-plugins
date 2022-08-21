@@ -2,7 +2,7 @@
   Author: Lau
   Date: August 22
   Commands: 
-            - !global <message>: Send a global message (requires moderator permission);
+            - !global <message>: Send a global message (requires moderator permission)
   
 */
 import Plugin from "../Plugin";
